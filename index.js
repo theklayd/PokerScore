@@ -1,7 +1,7 @@
 const Combinatorics = require('js-combinatorics');
 const PokerHand = require('poker-hand-evaluator');
 const sortBy = require('sort-array');
-module.exports.PokerHandCompute = function PokerHandCompute(PlayerHand, TotalCards) {
+ function PokerHandCompute(PlayerHand, TotalCards) {
     let ArrayHand = JSON.parse("[" + PlayerHand + "]"); // to array
     let cmb = Combinatorics.combination(ArrayHand, TotalCards); //5 for holdem 7 for omha
     let AllCombinations = [];
@@ -37,7 +37,7 @@ app.get('/Api/v1/Poker/:Hand0?/:Hand1?/:Hand2?/:Hand3?/:Hand4?/:Hand5?/:Hand6?/:
     for (var propName in req.params) {
       if (req.params.hasOwnProperty(propName)&&req.params[propName]!=undefined) {
          // console.log(propName, req.params[propName]);
-            let bestScore = PokerModel.PokerHandCompute(req.params[propName], TotalCards);
+            let bestScore = PokerHandCompute(req.params[propName], TotalCards);
             BestPlayerScores.push(bestScore);
       }
     }
