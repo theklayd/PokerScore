@@ -1,0 +1,26 @@
+{
+  "name": "without-potentiometer-arduino",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cariaga/without-potentiometer-arduino.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Cariaga/without-potentiometer-arduino/issues"
+  },
+  "homepage": "https://github.com/Cariaga/without-potentiometer-arduino#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "js-combinatorics": "^0.5.5",
+    "poker-hand-evaluator": "^1.0.1",
+    "sort-array": "^4.1.0"
+  }
+}
