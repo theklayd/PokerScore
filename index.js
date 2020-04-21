@@ -24,9 +24,9 @@ const sortBy = require('sort-array');
     return bestScore;
 }
 
-const express = require('express')
-const app = express()
-const port = 80
+const express = require('express');
+const app = express();
+const port = process.env.PORT || 80;
 
 app.get('/', (req, res) => res.send('Hello World!'))
 
