@@ -1,6 +1,27 @@
 const Combinatorics = require('js-combinatorics');
 const PokerHand = require('poker-hand-evaluator');
 const sortBy = require('sort-array');
+var cors = require('cors');
+
+// use it before all route definitions
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+
+  // Request methods you wish to allow
+  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,PATCH,OPTIONS');
+  // Request headers you wish to allow
+  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  res.header('Access-Control-Allow-Headers', 'Content-Type', 'X-Auth-Token');
+  // Set to true if you need the website to include cookies in the requests sent
+  // to the API (e.g. in case you use sessions)
+  res.header('Access-Control-Allow-Credentials', true);
+
+  next();
+});
+
+
+app.options('*', cors());
  function PokerHandCompute(PlayerHand, TotalCards) {
     let ArrayHand = JSON.parse("[" + PlayerHand + "]"); // to array
     let cmb = Combinatorics.combination(ArrayHand, TotalCards); //5 for holdem 7 for omha
