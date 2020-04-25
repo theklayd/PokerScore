@@ -3,6 +3,10 @@ const PokerHand = require('poker-hand-evaluator');
 const sortBy = require('sort-array');
 var cors = require('cors');
 
+const express = require('express');
+const app = express();
+const port = process.env.PORT || 3000;
+
 // use it before all route definitions
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
@@ -44,10 +48,6 @@ app.options('*', cors());
     let bestScore = scores[0];//[0] will return the best score
     return bestScore;
 }
-
-const express = require('express');
-const app = express();
-const port = process.env.PORT || 3000;
 
 app.get('/', (req, res) => res.send('Hello World!'))
 
