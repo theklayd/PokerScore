@@ -1,7 +1,7 @@
 const Combinatorics = require('js-combinatorics');
 const PokerHand = require('poker-hand-evaluator');
 const sortBy = require('sort-array');
-var cors = require('cors');
+const cors = require('cors');
 
 const express = require('express');
 const app = express();
@@ -26,6 +26,7 @@ app.use(function(req, res, next) {
 
 
 app.options('*', cors());
+
  function PokerHandCompute(PlayerHand, TotalCards) {
     let ArrayHand = JSON.parse("[" + PlayerHand + "]"); // to array
     let cmb = Combinatorics.combination(ArrayHand, TotalCards); //5 for holdem 7 for omha
